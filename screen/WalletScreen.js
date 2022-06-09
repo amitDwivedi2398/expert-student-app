@@ -12,7 +12,7 @@ import {
 import React, {useState, useEffect} from 'react';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {SwipeListView} from 'react-native-swipe-list-view';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {Icon} from 'react-native-elements';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import Modal from 'react-native-modal';
@@ -235,9 +235,20 @@ export default function WalletScreen({navigation}) {
                     <Text style={styles.modalText}>
                       Please Deposite INR to mentioned UPI-ID
                     </Text>
-                    <Text style={styles.paymentID}>
-                      UPI ID - 919524853258@federal
-                    </Text>
+                    <View
+                      style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        marginBottom: 20,
+                      }}>
+                      <Text style={styles.paymentID}>
+                        UPI ID - 919524853258@federal
+                      </Text>
+                      <TouchableOpacity style={{marginRight: 10}}>
+                        <Icon name="copy" type="font-awesome" size={22} />
+                      </TouchableOpacity>
+                    </View>
                     <Text style={styles.modalText1}>
                       Enter Amount To Recharge
                     </Text>
@@ -308,9 +319,16 @@ export default function WalletScreen({navigation}) {
                     <Text style={styles.modalText}>
                       Please Deposite USDT to mentioned Wallet-ID
                     </Text>
-                    <Text style={styles.paymentID}>
-                      0x4e9Db7309bf6468AaE65ad72D62c1747d6bB957A
-                    </Text>
+                    <View style={styles.pay}>
+                      <View style={{}}>
+                        <Text style={styles.paymentID}>
+                          0x4e9Db7309bf6468AaE65ad72D62c1747d6bB957A
+                        </Text>
+                      </View>
+                      <TouchableOpacity style={{marginRight: 15}}>
+                        <Icon name="copy" type="font-awesome" size={22} />
+                      </TouchableOpacity>
+                    </View>
                     <Text style={styles.modalText1}>
                       Enter Amount To Recharge
                     </Text>
@@ -473,16 +491,25 @@ export default function WalletScreen({navigation}) {
             </View>
           </View>
           <View style={styles.wall}>
-                      <View>
-                        <Text style={styles.txt}>Deposit</Text>
-                        <Text style={styles.txt1}>1. Make Manual Deposit to mentioned UPI - Id</Text>
-                        <Text style={styles.txt1}>2. Take a screenshot upload it and submit</Text>
-                        <Text style={styles.txt1}>3. After verification funds will Deposit in you WALLET</Text>
-                        <Text style={styles.txt}>Withdraw</Text>
-                        <Text style={styles.txt1}>1. Minimum withdraw is 10$</Text>
-                        <Text style={styles.txt1}>2. Requested fund will be transferred within 24hrs from the requested time</Text>
-                      </View>
-              </View>
+            <View>
+              <Text style={styles.txt}>Deposit</Text>
+              <Text style={styles.txt1}>
+                1. Make Manual Deposit to mentioned UPI - Id
+              </Text>
+              <Text style={styles.txt1}>
+                2. Take a screenshot upload it and submit
+              </Text>
+              <Text style={styles.txt1}>
+                3. After verification funds will Deposit in you wallet
+              </Text>
+              <Text style={styles.txt}>Withdraw</Text>
+              <Text style={styles.txt1}>1. Minimum withdraw is 10$</Text>
+              <Text style={styles.txt1}>
+                2. Requested fund will be transferred within 24hrs from the
+                requested time
+              </Text>
+            </View>
+          </View>
         </SafeAreaView>
       </ScrollView>
     </SafeAreaView>
@@ -544,27 +571,27 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     height: 80,
   },
-  wall:{
-    justifyContent:'center',
-    alignSelf:'center',
-    borderWidth:1,
-    backgroundColor:'white',
-    height:300,
-    width:320,
+  wall: {
+    justifyContent: 'center',
+    alignSelf: 'center',
+    borderWidth: 1,
+    backgroundColor: 'white',
+    height: 300,
+    width: 320,
   },
-  txt:{
-    textAlign:'center',
-    fontSize:25,
-    fontWeight:'600',
-    color:'#8C0000',
-    marginBottom:10,
+  txt: {
+    textAlign: 'center',
+    fontSize: 25,
+    fontWeight: '600',
+    color: '#8C0000',
+    marginBottom: 10,
   },
-  txt1:{
-    color:'black',
-    fontSize:15,
-    fontWeight:'600',
-    marginBottom:5,
-    marginLeft:5,
+  txt1: {
+    color: 'black',
+    fontSize: 14,
+    fontWeight: '500',
+    marginBottom: 5,
+    marginLeft: 5,
   },
   mainModal: {
     flex: 1,
@@ -592,9 +619,17 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '700',
     margin: 2,
-    marginBottom: 20,
-    backgroundColor: 'yellow',
+    textAlign: 'center',
     padding: 5,
+    width: 280,
+  },
+  pay: {
+    flexDirection: 'row',
+    backgroundColor: 'yellow',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 300,
+    height: 70,
   },
   modalText1: {
     color: 'black',

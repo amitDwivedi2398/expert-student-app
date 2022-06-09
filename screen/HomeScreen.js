@@ -168,7 +168,7 @@ export default function HomeScreen({navigation}) {
     );
   }
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: '#ffffff'}}>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#f1f3f6'}}>
       <StatusBar barStyle="light-content" backgroundColor="black" />
       <CustomHeader title="Home" navigation={navigation} />
       <ScrollView>
@@ -266,7 +266,7 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.popular}>Trending Courses</Text>
             <ScrollView horizontal={true}>
               {course.map(courses => (
-                <View key={courses._id} style={styles.catview}>
+                <View key={courses._id} style={styles.first}>
                   <TouchableOpacity
                     onPress={() =>
                       navigation.navigate('Details', {id: courses._id})
@@ -299,7 +299,7 @@ export default function HomeScreen({navigation}) {
             <Text style={styles.popular}>Free Courses</Text>
             <ScrollView horizontal={true}>
               {free.map(freeCourse => (
-                <View key={freeCourse._id} style={styles.catview}>
+                <View key={freeCourse._id} style={styles.first}>
                   <TouchableOpacity
                     onPress={() =>
                       navigation.navigate('Details', {id: freeCourse._id})
@@ -337,14 +337,14 @@ const styles = StyleSheet.create({
   first1: {
     flex: 1,
     margin: 5,
-    // backgroundColor: '#990099',
+    backgroundColor: '#fff',
     borderRadius: 15,
     borderWidth: 1,
   },
   first: {
     flex: 1,
     margin: 5,
-    // backgroundColor: '#990099',
+    backgroundColor: '#fff',
     borderRadius: 15,
   },
   second: {
@@ -359,7 +359,7 @@ const styles = StyleSheet.create({
   teacherText: {
     marginLeft: 5,
     fontWeight: '600',
-    color: 'white',
+    color: 'black',
   },
   teacherText1: {
     marginLeft: 5,
@@ -371,11 +371,11 @@ const styles = StyleSheet.create({
   },
   catview: {
     flex: 1,
-    backgroundColor: '#8080ff',
+    backgroundColor: '#fff',
     borderRadius: 20,
-    marginHorizontal:2,
+    marginHorizontal: 2,
   },
-  cattext: {padding: 15, color: 'white', fontWeight: '500'},
+  cattext: {padding: 15, color: 'black', fontWeight: '500'},
   latestImg: {
     width: 250,
     height: 160,
@@ -398,7 +398,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontWeight: 'bold',
     fontSize: 15,
-    color: 'white',
+    color: 'black',
     textTransform: 'capitalize',
   },
   coursetitle1: {
