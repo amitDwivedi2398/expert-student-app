@@ -543,7 +543,7 @@ const App = ({navigation}) => {
                     color: 'black',
                     margin: 10,
                   }}>
-                  Kyc Form
+                  Kyc
                 </Text>
               </TouchableOpacity>
             </View>
@@ -573,7 +573,7 @@ const App = ({navigation}) => {
                 borderBottomColor: '#D3D3D3',
                 borderBottomWidth: 1,
               }}>
-              <View style={{margin: 10}}>
+              <View style={{margin: 13}}>
                 <Icon name="info" color="black" size={20} />
               </View>
               <TouchableOpacity
@@ -743,6 +743,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginLeft: 5,
     padding: 5,
+    alignSelf: 'flex-end',
   },
   badgeImage: {
     flex: 2,
